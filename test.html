@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receitas Deliciosas</title>
+    <style>
+        :root {
+            --background-light: #f8f1e6;
+            --background-dark: #1f2937;
+            --text-light: #3c3c3c;
+            --text-dark: #cbd5e1;
+            --title-light: #e85d04;
+            --title-dark: #fca311;
+            --card-light: #fff;
+            --card-dark: #4b5563;
+        }
+
+        [data-theme="dark"] {
+            --background: var(--background-dark);
+            --text: var(--text-dark);
+            --title: var(--title-dark);
+            --card: var(--card-dark);
+        }
+
+        [data-theme="light"] {
+            --background: var(--background-light);
+            --text: var(--text-light);
+            --title: var(--title-light);
+            --card: var(--card-light);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            padding: 30px;
+            transition: all 0.3s ease;
+            /* font-family: Arial, sans-serif;
+        background-color: var(--background);
+        color: var(--text);
+        padding: 30px;
+        transition: all 0.3s ease;
+        margin: 0;
+        position: relative;
+        overflow: hidden; */
+        }
+
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--title);
+        }
+
+        .carousel {
+            display: flex;
+            position: relative;
+            transition: all 0.3s ease;
+            width: 500%;
+        }
+
+        .receita {
+            background-color: var(--card);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            width: calc(100% / 5);
+            box-sizing: border-box;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .receita h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #023047;
+        }
+
+        .receita p {
+            font-size: 1rem;
+            line-height: 1.5;
+
+        }
+
+        .receita:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        .emoticon {
+            font-size: 2rem;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .toggle-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .toggle {
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1.2rem;
+            padding: 5px 10px;
+            border: 1px solid currentColor;
+            border-radius: 5px;
+        }
+
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-button {
+            background-color: var(--title);
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1.2rem;
+            margin: 0 5px;
+            padding: 5px 10px;
+            text-align: center;
+        }
+
+        .nav-button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+    <div class="toggle-container">
+        <span class="toggle" onclick="toggleTheme()">Modo Escuro 🌙</span>
+    </div>
+    <h1>Receitas Deliciosas 🍹</h1>
+    <div class="carousel">
+        <div class="receita">
+            <h2><span class="emoticon">🍹</span> Caipirinha de Manga</h2>
+            <p><strong>Ingredientes:</strong></p>
+            <ul>
+                <li><span class="emoticon">🥃</span> 50 ml de Cachaça</li>
+                <li><span class="emoticon">🍋</span> 1 limão cortado em pedaços</li>
+                <li><span class="emoticon">🥄</span> 2 colheres de chá de açúcar</li>
+                <li><span class="emoticon">🥭</span> 30 ml de polpa de manga</li>
+            </ul>
+            <p><strong>Modo de preparo:</strong> Amasse o limão com o açúcar em um copo baixo. Adicione a polpa de manga
+                e a cachaça. Complete com gelo, mexa bem e sirva.</p>
+        </div>
+        <div class="receita">
+            <h2><span class="emoticon">🍹</span> Raspberry Vodka Passion</h2>
+            <p><strong>Ingredientes:</strong></p>
+            <ul>
+                <li><span class="emoticon">🥃</span> 60 ml de Vodka de raspberry</li>
+                <li><span class="emoticon">🍈</span> 30 ml de polpa de maracujá</li>
+                <li><span class="emoticon">🍓</span> 15 ml de xarope de morango</li>
+                <li><span class="emoticon">🍹</span> Sprite para completar</li>
+            </ul>
+            <p><strong>Modo de preparo:</strong> Misture a vodka de raspberry, a polpa de maracujá e o xarope de morango
+                em um copo alto com gelo. Complete com Sprite, mexa delicadamente e decore com uma fatia de limão.</p>
+        </div>
+        <div class="receita">
+            <h2><span class="emoticon">🍹</span> Gin Cacau Fizz</h2>
+            <p><strong>Ingredientes:</strong></p>
+            <ul>
+                <li><span class="emoticon">🥃</span> 60 ml de Gin</li>
+                <li><span class="emoticon">🍫</span> 30 ml de polpa de cacau</li>
+                <li><span class="emoticon">🍋</span> 15 ml de suco de limão</li>
+                <li><span class="emoticon">🍹</span> Sprite para completar</li>
+            </ul>
+            <p><strong>Modo de preparo:</strong> Misture o gin, a polpa de cacau e o suco de limão em um copo de mistura
+                com gelo. Coe para um copo alto com gelo e complete com Sprite. Mexa delicadamente e decore com uma
+                fatia de limão.</p>
+        </div>
+        <div class="receita">
+            <h2><span class="emoticon">🍹</span> Chocolate Baileys Delight</h2>
+            <p><strong>Ingredientes:</strong></p>
+            <ul>
+                <li><span class="emoticon">🥃</span> 60 ml de Baileys</li>
+                <li><span class="emoticon">🍫</span> 30 ml de polpa de cacau</li>
+            </ul>
+            <p><strong>Modo de preparo:</strong> Misture o Baileys e a polpa de cacau em um copo baixo com gelo. Mexa
+                bem e sirva.</p>
+        </div>
+        <div class="receita">
+            <h2><span class="emoticon">🍹</span> Vinho Tropical Spritzer</h2>
+            <p><strong>Ingredientes:</strong></p>
+            <ul>
+                <li><span class="emoticon">🍷</span> 120 ml de vinho branco ou rosé</li>
+                <li><span class="emoticon">🥭</span> 30 ml de polpa de manga</li>
+                <li><span class="emoticon">🍹</span> Sprite para completar</li>
+            </ul>
+            <p><strong>Modo de preparo:</strong> Misture o vinho e a polpa de manga em um copo alto com gelo. Complete
+                com Sprite e mexa delicadamente. Decore com uma fatia de limão.</p>
+        </div>
+    </div>
+    <div class="navigation">
+        <button class="nav-button" onclick="moveCarousel(-1)">❮</button>
+        <button class="nav-button" onclick="moveCarousel(1)">❯</button>
+    </div>
+    <script>
+        const carousel = document.querySelector('.carousel');
+        let currentSlide = 0;
+        const totalSlides = carousel.children.length;
+
+        function moveCarousel(direction) {
+            currentSlide += direction;
+
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            } else if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+
+            carousel.style.transform = `translateX(-${(100 / totalSlides) * currentSlide}%)`;
+        }
+    </script>
+    <script>
+        function toggleTheme() {
+            const body = document.querySelector('body');
+            const currentTheme = body.getAttribute('data-theme');
+            const toggleText = document.querySelector('.toggle');
+
+            if (currentTheme === 'light') {
+                body.setAttribute('data-theme', 'dark');
+                toggleText.textContent = 'Modo Claro ☀️';
+            } else {
+                body.setAttribute('data-theme', 'light');
+                toggleText.textContent = 'Modo Escuro 🌙';
+            }
+        }
+    </script>
+</body>
+
+</html>
